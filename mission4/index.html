@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mission4</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+  <link href="./style.css" rel="stylesheet">
+  <link href="./theme.css" rel="stylesheet">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <h1 class="title">
+    <span class="title-text">Date Picker</span>
+  </h1>
+
+  <div class="set">
+    <input class="datepicker" placeholder="Select date" readonly></input>
+    <div class="calendar">
+      <div class="calendar-nav">
+        <button class="lastmonth"></button>
+        <button class="nextmonth"></button>
+        <p class="month"></p>
+        <p class="year"></p>
+      </div>
+      <div class="calendar-grid">
+        <div class="days">
+          <div class="day">SUN</div>
+          <div class="day">MON</div>
+          <div class="day">TUE</div>
+          <div class="day">WED</div>
+          <div class="day">THU</div>
+          <div class="day">FRI</div>
+          <div class="day">SAT</div>
+        </div>
+        <div class="dates"></div>
+      </div>
+    </div>    
+  </div>
+
+</body>
+</html>

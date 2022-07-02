@@ -1,0 +1,231 @@
+/* 기본설정 시작 */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans';
+  font-weight: normal;
+  background-color: var(--color-gray-100);
+  color: var(--color-black);
+}
+
+.title {
+  color: #db5b33;
+  font-weight: 300;
+  
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.title > span {
+  display: inline-block;
+  width: 270px;
+  text-align: left;
+}
+/* 기본설정 끝 */
+
+
+.set {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.datepicker {
+  margin-right: 110px;
+  padding: 0;
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+  cursor: pointer;
+  
+  text-indent: 10px;
+  font-size: 14px;
+  width: 160px;
+  height: 30px;
+}
+
+.datepicker > span {
+  color: var(--color-gray-500);
+}
+
+.calendar {
+  display: none;
+  /* --width: 270px; */
+  margin: 5px 0 0 0;
+  padding: 0;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 5%;
+  overflow: hidden;
+  font-size: calc((var(--width, 270px) / 270) * 10);
+
+  width: var(--width, 270px);
+  height: calc((var(--width, 270px) / 9) * 10);
+}
+
+.calendar-nav {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  width: var(--width, 270px);
+  height: calc((var(--width, 270px) / 9) * 2);
+}
+
+.calendar-nav > button:nth-of-type(1) {
+  position: absolute;
+  padding: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: calc((var(--width, 270px) / 270) * 6);
+  cursor: pointer;
+  
+  left: calc((var(--width, 270px) / 15) * 1);
+
+  border-color: var(--color-green) var(--color-white) var(--color-green) var(--color-green);
+}
+.calendar-nav > button:nth-of-type(2) {
+  position: absolute;
+  padding: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: calc((var(--width, 270px) / 270) * 6);
+  cursor: pointer;
+
+  right: calc((var(--width, 270px) / 15) * 1);
+
+  border-color: var(--color-green) var(--color-green) var(--color-green) var(--color-white);
+}
+
+.calendar-nav > p {
+  margin: 0;
+}
+.calendar-nav > p:nth-of-type(1) {
+  font-size: calc((var(--width, 270px) / 270) * 14);
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+
+.calendar-grid {
+  margin: 0;
+  padding: 0 calc((var(--width, 270px) / 270) * 5) calc((var(--width, 270px) / 270) * 5);
+  background-color: var(--color-white);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+
+  text-align: center;
+
+  font-size: calc((var(--width, 270px) / 270) * 12);
+
+  width: var(--width, 270px);
+  height: calc((var(--width, 270px) / 9) * 8);
+}
+
+.days {
+  margin: 0;
+  padding: 0;
+  grid-column: 1 / 8;
+  grid-row: 1 / 2;
+  color: var(--color-gray-500);
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: auto;
+
+  align-items: center;
+}
+
+
+.dates {
+  margin: 0;
+  padding: 0;
+  grid-column: 1 / 8;
+  grid-row: 2 / 8;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-template-rows: repeat(6, auto);
+}
+
+.date {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.date > span {
+  display: inline-block;
+  width: inherit;
+  height: fit-content;
+}
+
+.date:hover {
+  background-color:  var(--color-green);
+  border-radius: 50%;
+  color: var(--color-white);
+}
+
+.date:nth-child(7n + 1) {
+  color: red;
+}
+
+.date:nth-child(7n + 1):hover {
+  background-color:  var(--color-green);
+  border-radius: 50%;
+  color: var(--color-white);
+}
+
+.last,
+.next {
+  color: var(--color-gray-500);
+}
+
+.last:hover,
+.next:hover {
+  background-color:  var(--color-green);
+  border-radius: 50%;
+  color: var(--color-white);
+}
+
+.today {
+  position: relative;
+}
+
+.today::before {
+  position: absolute;
+  content: '';
+
+  width: calc((var(--width, 270px) / 27) * 4);
+  height: calc((var(--width, 270px) / 27) * 4);
+  border: 1px solid var(--color-green);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calendar--focus {
+  display: block;
+}
+
