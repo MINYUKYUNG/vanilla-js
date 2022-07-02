@@ -21,9 +21,9 @@
 - 작업 파일
   - index.html
   - style.css
-  - app.js, main.js, 
+  - app.js, main.js
 
 ## Mission-05
 - 뉴스 Viewer 만들기
 - 작업 파일
-  - index.js, Nav.js, NewList.js, 
+  - index.js, Nav.js, NewList.js
